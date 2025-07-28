@@ -19,7 +19,7 @@ local FACTION_TYPE_MAJOR = 2				-- Major faction, save : level, earned, threshol
 
 local enum = DataStore.Enum
 local factionStandingLabels = enum.FactionStandingLabels
-local friendshipStandingLabels = enum.FactionStandingLabels
+local friendshipStandingLabels = enum.FriendshipStandingLabels
 local factionStandingThresholds = enum.FactionStandingThresholds
 local friendshipStandingThresholds = enum.FriendshipStandingThresholds
 local bit64 = LibStub("LibBit64")
