@@ -306,9 +306,11 @@ do
 		AddFaction(2685)     -- Gallagio Loyalty Rewards Club
 		AddFaction(2677)     -- Steamwheedle Cartel
 		AddFaction(2671)     -- Venture Company
+		AddFaction(2688)     -- Flame's Radiance
 		
 		-- The War Within 11.2
 		AddFaction(2658)     -- The K'aresh Trust
+		AddFaction(2736)     -- Manaforge Vandals
 		
 		
 	end
