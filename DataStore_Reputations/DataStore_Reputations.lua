@@ -634,8 +634,12 @@ local function _GetRawReputationInfo(character, faction)
 	end
 end
 
+local function _GetGuildReputation(character)
+	return bit64:RightShift(character.guildRep or 0, 8)	-- bits 8+ : earned rep
+end
+
 local function _IsExaltedWithGuild(character)
-	return (character.guildRep and character.guildRep >= 42000)
+	return _GetGuildReputation(character) >= 42000
 end
 
 AddonFactory:OnAddonLoaded(addonName, function()
@@ -649,7 +653,8 @@ AddonFactory:OnAddonLoaded(addonName, function()
 				-- IsExaltedWithGuild = isRetail and _IsExaltedWithGuild,
 				IsExaltedWithGuild = _IsExaltedWithGuild,
 				-- GetGuildReputation = isRetail and function(character) return character.guildRep or 0 end,
-				GetGuildReputation = function(character) return character.guildRep or 0 end,
+				-- GetGuildReputation = function(character) return character.guildRep or 0 end,
+				GetGuildReputation = _GetGuildReputation,
 				-- GetReputationInfo = isRetail and _GetReputationInfo_Retail or _GetReputationInfo_NonRetail,
 				GetReputationInfo = _GetReputationInfo_Retail,
 			},
